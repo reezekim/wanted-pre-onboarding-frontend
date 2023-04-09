@@ -1,5 +1,10 @@
 import React from "react";
+import LoginCard from "../components/auth/logInCard/LoginCard";
 
 export default function SignIn() {
-  return <div>SignIn</div>;
+  return (
+    <section>
+      <LoginCard />
+    </section>
+  );
 }
