@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginRequest } from "../../../apis/signin";
+import styles from "./LoginCard.module.css";
 
 export default function LoginCard() {
   const navigate = useNavigate();
@@ -33,36 +34,42 @@ export default function LoginCard() {
 
   return (
     <form onSubmit={loginSubmit}>
-      <title>Log In</title>
-      <div>
-        <input
-          data-testid="email-input"
-          type="email"
-          name="email"
-          placeholder="이메일"
-          value={inputValue.email}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <input
-          data-testid="password-input"
-          type="password"
-          name="password"
-          placeholder="비밀번호"
-          value={inputValue.password}
-          onChange={handleChange}
-        />
-      </div>
-      <button data-testid="signin-button" type="submit" disabled={validation}>
+      <h2 className={styles.title}>Log In</h2>
+      <input
+        data-testid="email-input"
+        type="email"
+        name="email"
+        placeholder="이메일"
+        value={inputValue.email}
+        onChange={handleChange}
+      />
+      <input
+        data-testid="password-input"
+        type="password"
+        name="password"
+        placeholder="비밀번호"
+        value={inputValue.password}
+        onChange={handleChange}
+      />
+      <button
+        data-testid="signin-button"
+        type="submit"
+        disabled={validation}
+        className={styles.btn}
+      >
         로그인
       </button>
-      <p>
-        계정이 없으신가요?
-        <button data-testid="signup-button" type="button" onClick={goToSiginup}>
+      <div className={styles.desc}>
+        <p className={styles.sub}>계정이 없으신가요?</p>
+        <button
+          data-testid="signup-button"
+          type="button"
+          onClick={goToSiginup}
+          className={styles.link}
+        >
           가입하기
         </button>
-      </p>
+      </div>
     </form>
   );
 }
