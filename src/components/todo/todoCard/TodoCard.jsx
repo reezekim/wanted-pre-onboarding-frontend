@@ -1,6 +1,13 @@
-import React, { useState } from "react";
-import { dleteRequset, updateTodoRequest } from "../../../apis/todo";
+import React from "react";
+import { useState } from "react";
+import { deleteRequest, updateTodoRequest } from "../../../apis/todo";
 import styles from "./TodoCard.module.css";
+import { FiEdit3 } from "react-icons/fi";
+import {
+  RiDeleteBin5Fill,
+  RiCheckboxCircleLine,
+  RiCloseCircleLine,
+} from "react-icons/ri";
 
 export default function TodoCard({ id, isCompleted, todo, getTodo }) {
   const [isUpdata, setIsUpdata] = useState(true);
@@ -15,7 +22,7 @@ export default function TodoCard({ id, isCompleted, todo, getTodo }) {
   };
 
   const deleteTodo = () => {
-    dleteRequset(id);
+    deleteRequest(id);
     setTimeout(() => {
       getTodo();
     }, 200);
@@ -29,7 +36,6 @@ export default function TodoCard({ id, isCompleted, todo, getTodo }) {
       getTodo();
     }, 200);
   };
-
   const modifyContent = () => {
     setIsUpdata(false);
     setTodoValue(todo);
@@ -44,8 +50,10 @@ export default function TodoCard({ id, isCompleted, todo, getTodo }) {
   return (
     <li className={styles.todo}>
       {isUpdata ? (
-        <label>
+        <div className={styles.cont}>
           <input
+            id={id}
+            name="todo"
             type="checkbox"
             onClick={() => setCheck((prev) => !prev)}
             defaultChecked={isCompleted}
@@ -59,45 +67,47 @@ export default function TodoCard({ id, isCompleted, todo, getTodo }) {
             onClick={modifyContent}
             className={styles.button}
           >
-            수정
+            <FiEdit3 className={styles.icons} />
           </button>
           <button
             data-testid="delete-button"
             onClick={deleteTodo}
             className={styles.button}
           >
-            삭제
+            <RiDeleteBin5Fill className={styles.icons} />
           </button>
-        </label>
+        </div>
       ) : (
-        <label>
+        <div className={styles.cont}>
           <input
+            id={id}
+            name="todo"
             type="checkbox"
-            defaultChecked={isCompleted}
             onClick={() => setCheck((prev) => !prev)}
+            defaultChecked={isCompleted}
             className={styles.checkbox}
           />
           <input
             data-testid="modify-input"
             value={todoValue}
             onChange={handleChange}
-            className={styles.checkbox}
+            className={styles.input}
           />
           <button
             data-testid="submit-button"
             onClick={updateTodo}
             className={styles.button}
           >
-            제출
+            <RiCheckboxCircleLine className={styles.icons} />
           </button>
           <button
             data-testid="cancel-button"
             onClick={deleteContent}
             className={styles.button}
           >
-            취소
+            <RiCloseCircleLine className={styles.icons} />
           </button>
-        </label>
+        </div>
       )}
     </li>
   );

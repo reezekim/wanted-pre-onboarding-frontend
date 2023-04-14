@@ -2,6 +2,8 @@ import React, { useCallback, useEffect, useState } from "react";
 import { createTodoRequest, todoRequest } from "../../../apis/todo";
 import TodoCard from "../todoCard/TodoCard";
 import styles from "./TodoList.module.css";
+import { BsPlusLg } from "react-icons/bs";
+import TodoHeader from "../todoHeader/TodoHeader";
 
 export default function TodoList() {
   const [todoData, setTodoData] = useState();
@@ -24,24 +26,8 @@ export default function TodoList() {
 
   return (
     <>
+      <TodoHeader />
       <ul className={styles.list}>
-        <form>
-          <input
-            data-testid="new-todo-input"
-            name="todo"
-            placeholder="할 일을 적어주세요."
-            value={todoValue}
-            onChange={handleChange}
-          />
-          <button
-            data-testid="new-todo-add-button"
-            type="submit"
-            onClick={createTodo}
-            className={styles.btn}
-          >
-            추가
-          </button>
-        </form>
         {todoData?.map(({ id, isCompleted, todo }) => (
           <TodoCard
             key={id}
@@ -52,6 +38,26 @@ export default function TodoList() {
           />
         ))}
       </ul>
+      <div className={styles.addTodo}>
+        <form className={styles.form}>
+          <input
+            data-testid="new-todo-input"
+            name="todo"
+            placeholder="해야 할 일을 입력하세요"
+            value={todoValue}
+            onChange={handleChange}
+            className={styles.input}
+          />
+          <button
+            data-testid="new-todo-add-button"
+            type="submit"
+            onClick={createTodo}
+            className={styles.button}
+          >
+            <BsPlusLg />
+          </button>
+        </form>
+      </div>
     </>
   );
 }
