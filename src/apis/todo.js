@@ -34,7 +34,7 @@ export const createTodoRequest = async (
     .catch((error) => {});
 };
 
-export const dleteRequset = async (id) => {
+export const deleteRequest = async (id) => {
   await api.delete(`${TODO_URL}/${id}`);
 };
 
