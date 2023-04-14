@@ -1,10 +1,19 @@
 import React from "react";
-import styles from "../css/section.module.css";
 import LoginCard from "../components/auth/logInCard/LoginCard";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function SignIn() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate(`/todo`);
+    }
+  }, [navigate]);
+
   return (
-    <section className={styles.section}>
+    <section>
       <LoginCard />
     </section>
   );
