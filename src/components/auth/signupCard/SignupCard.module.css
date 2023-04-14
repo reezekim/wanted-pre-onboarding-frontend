@@ -1,4 +1,4 @@
-form {
+.form {
   width: 100%;
   height: 100%;
   display: flex;
@@ -17,7 +17,7 @@ form {
   color: var(--color-text);
 }
 
-input {
+.input {
   display: flex;
   width: 70%;
   padding: 10px;
@@ -27,7 +27,7 @@ input {
   margin: 4px 0;
 }
 
-.btn {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,12 +40,13 @@ input {
   font-weight: 600;
 }
 
-.btn:hover {
+.button:hover {
   filter: brightness(1.3);
 }
 
 .desc {
   display: flex;
+  color: #9ea2a5;
 }
 
 .sub {
