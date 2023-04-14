@@ -33,7 +33,7 @@ export default function LoginCard() {
   };
 
   return (
-    <form onSubmit={loginSubmit}>
+    <form onSubmit={loginSubmit} className={styles.form}>
       <h2 className={styles.title}>Log In</h2>
       <input
         data-testid="email-input"
@@ -42,6 +42,7 @@ export default function LoginCard() {
         placeholder="이메일"
         value={inputValue.email}
         onChange={handleChange}
+        className={styles.input}
       />
       <input
         data-testid="password-input"
@@ -50,12 +51,13 @@ export default function LoginCard() {
         placeholder="비밀번호"
         value={inputValue.password}
         onChange={handleChange}
+        className={styles.input}
       />
       <button
         data-testid="signin-button"
         type="submit"
         disabled={validation}
-        className={styles.btn}
+        className={styles.button}
       >
         로그인
       </button>

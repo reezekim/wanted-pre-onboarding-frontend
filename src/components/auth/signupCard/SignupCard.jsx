@@ -32,9 +32,8 @@ export default function SignupCard() {
   };
 
   return (
-    <form onSubmit={signupSubmit}>
+    <form onSubmit={signupSubmit} className={styles.form}>
       <h2 className={styles.title}>Sign Up</h2>
-
       <input
         data-testid="email-input"
         type="email"
@@ -42,6 +41,7 @@ export default function SignupCard() {
         placeholder="이메일"
         value={inputValue.email}
         onChange={handleChange}
+        className={styles.input}
       />
       <input
         data-testid="password-input"
@@ -50,12 +50,13 @@ export default function SignupCard() {
         placeholder="비밀번호"
         value={inputValue.password}
         onChange={handleChange}
+        className={styles.input}
       />
       <button
         data-testid="signup-button"
         type="submit"
         disabled={validation}
-        className={styles.btn}
+        className={styles.button}
       >
         회원가입
       </button>
