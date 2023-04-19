@@ -7,8 +7,10 @@
 <br />
 
 ## 2. 데모영상
+<img width="80%" src="{https://user-images.githubusercontent.com/103403660/233144977-78dd1531-3537-4de8-b578-6b715f5f6f68.gif}" />
 
-![데모영상](./public/asset/%EB%85%B9%ED%99%94_2023_04_19_23_54_20_105.mp4)
+
+<br />
 
 ## 3. 프로젝트 구조
 
