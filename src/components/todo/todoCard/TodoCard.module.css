@@ -31,9 +31,9 @@
   display: flex;
   width: 28px;
   height: 28px;
-  content: '';
+  content: "";
   border-radius: 50%;
-  border: 2px solid #D1D7DC;
+  border: 2px solid #d1d7dc;
   background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
   background-repeat: no-repeat;
   background-position: 2px 3px;
@@ -45,13 +45,12 @@
   display: flex;
   color: var(--color-grey);
   text-decoration: line-through;
-
 }
 
 .checkbox:checked ~ label:before {
   color: var(--color-white);
-  background-color: var(--color-green);
-  border-color: var(--color-green);
+  background-color: var(--color-check);
+  border-color: var(--color-check);
   margin-right: 12px;
 }
 
