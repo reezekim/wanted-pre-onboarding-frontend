@@ -5,7 +5,20 @@ import styles from "./LoginCard.module.css";
 
 export default function LoginCard() {
   const navigate = useNavigate();
+  const goToSiginup = (e) => {
+    navigate(`/signup`);
+    e.preventDefault();
+  };
+
   const [inputValue, setInputValue] = useState({ email: "", password: "" });
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+
+  const validation = !(
+    inputValue.email.includes("@") && inputValue.password.length > 7
+  );
+  const emailValid = inputValue.email.includes("@");
+  const passwordValid = inputValue.password.length >= 8;
 
   const handleChange = useCallback(
     (e) => {
@@ -16,15 +29,6 @@ export default function LoginCard() {
     [inputValue]
   );
 
-  const validation = !(
-    inputValue.email.includes("@") && inputValue.password.length > 7
-  );
-
-  const goToSiginup = (e) => {
-    navigate(`/signup`);
-    e.preventDefault();
-  };
-
   const loginSubmit = (e) => {
     const email = inputValue.email;
     const password = inputValue.password;
@@ -32,27 +36,60 @@ export default function LoginCard() {
     e.preventDefault();
   };
 
+  // const [button, setButton] = useState(false);
+  // function changeButton() {
+  //   if (!emailValid || !passwordValid) {
+  //     setButton(false);
+  //   } else {
+  //     setButton(true);
+  //   }
+  // }
+
   return (
     <form onSubmit={loginSubmit} className={styles.form}>
       <h2 className={styles.title}>Log In</h2>
-      <input
-        data-testid="email-input"
-        type="email"
-        name="email"
-        placeholder="이메일"
-        value={inputValue.email}
-        onChange={handleChange}
-        className={styles.input}
-      />
-      <input
-        data-testid="password-input"
-        type="password"
-        name="password"
-        placeholder="비밀번호"
-        value={inputValue.password}
-        onChange={handleChange}
-        className={styles.input}
-      />
+      <div className={styles.wrap}>
+        <input
+          data-testid="email-input"
+          type="email"
+          name="email"
+          placeholder="이메일"
+          value={inputValue.email}
+          onChange={handleChange}
+          // onKeyUp={changeButton}
+          onFocus={() => setEmailError(true)}
+          onBlur={() => setEmailError(false)}
+          className={styles.input}
+        />
+        {emailError && !emailValid ? (
+          <span className={styles.errorMessage}>
+            이메일에는 @가 포함되어야 합니다.
+          </span>
+        ) : (
+          <span className={styles.null}>이메일에는 @가 포함되어야 합니다.</span>
+        )}
+      </div>
+      <div className={styles.wrap}>
+        <input
+          data-testid="password-input"
+          type="password"
+          name="password"
+          placeholder="비밀번호"
+          value={inputValue.password}
+          onChange={handleChange}
+          // onKeyUp={changeButton}
+          onFocus={() => setPasswordError(true)}
+          onBlur={() => setPasswordError(false)}
+          className={styles.input}
+        />
+        {passwordError && !passwordValid ? (
+          <span className={styles.errorMessage}>
+            비밀번호는 8자 이상이어야 합니다.
+          </span>
+        ) : (
+          <span className={styles.null}>비밀번호는 8자 이상이어야 합니다.</span>
+        )}
+      </div>
       <button
         data-testid="signin-button"
         type="submit"
