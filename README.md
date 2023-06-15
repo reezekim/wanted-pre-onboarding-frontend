@@ -10,16 +10,7 @@
 <br />
 
 ## 2. 데모영상
-<img src="/src/assets/데모영상.gif" />
-
-<br />
-
-<p align="center">
-    <img src="https://github.com/reezekim/wanted-pre-onboarding-frontend/assets/103403660/fead9651-0cd8-4c89-bf6b-0c19fba6b2e5">
-</p>
-
-<br />
-<img src="![데모영상](https://github.com/reezekim/wanted-pre-onboarding-frontend/assets/103403660/126b5553-6641-491b-9688-026613ff76a6)">
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/103403660/246151732-fead9651-0cd8-4c89-bf6b-0c19fba6b2e5.mp4" />
 
 <br />
 
