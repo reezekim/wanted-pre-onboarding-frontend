@@ -19,7 +19,7 @@
   display: none;
 }
 
-.text {
+.textList {
   flex: 1 0 auto;
   display: flex;
   align-items: center;
@@ -27,7 +27,16 @@
   overflow: hidden;
 }
 
-.text::before {
+.textFix {
+  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.textList::before,
+.textFix::before {
   display: flex;
   width: 28px;
   height: 28px;
