@@ -10,17 +10,22 @@
 <br />
 
 ## 2. 데모영상
+<img src="/src/assets/데모영상.gif" />
+
+<br />
 
 <p align="center">
-    <img width='auto' alt='데모영상' src="{https://github.com/reezekim/wanted-pre-onboarding-frontend/assets/103403660/fead9651-0cd8-4c89-bf6b-0c19fba6b2e5}" />
+    <img src="https://github.com/reezekim/wanted-pre-onboarding-frontend/assets/103403660/fead9651-0cd8-4c89-bf6b-0c19fba6b2e5">
 </p>
-<img width='auto' alt='데모영상' src="{![데모영상](https://github.com/reezekim/wanted-pre-onboarding-frontend/assets/103403660/126b5553-6641-491b-9688-026613ff76a6)}" />
+
+<br />
+<img src="![데모영상](https://github.com/reezekim/wanted-pre-onboarding-frontend/assets/103403660/126b5553-6641-491b-9688-026613ff76a6)">
 
 <br />
 
 ## 3. 배포 링크
 
-[배포링크] (https://reezekim.netlify.app)
+[https://reezekim.netlify.app](https://reezekim.netlify.app)
 
 <br />
 
