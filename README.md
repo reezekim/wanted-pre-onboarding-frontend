@@ -10,7 +10,7 @@
 <br />
 
 ## 2. 데모영상
-<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/103403660/246151732-fead9651-0cd8-4c89-bf6b-0c19fba6b2e5.mp4" />
+![데모영상](https://github.com/reezekim/wanted-pre-onboarding-frontend/assets/103403660/26466ea8-f624-427b-83f5-a5546d67e455)
 
 <br />
 
