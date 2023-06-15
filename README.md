@@ -1,18 +1,46 @@
 # wanted-pre-onboarding-frontend
 ## 원티드 프리온보딩 프론트엔드 인턴십 | 선발과제
 
-## 1. 배포 링크
-📌 https://playful-crepe-aeeb9f.netlify.app
+<br />
+
+## 1. 지원자 성명
+
+김나현
 
 <br />
 
 ## 2. 데모영상
-<img width="80%" src="{https://user-images.githubusercontent.com/103403660/233144977-78dd1531-3537-4de8-b578-6b715f5f6f68.gif}" />
 
+<p align="center">
+    <img width='auto' alt='데모영상' src="{https://github.com/reezekim/wanted-pre-onboarding-frontend/assets/103403660/fead9651-0cd8-4c89-bf6b-0c19fba6b2e5}" />
+</p>
+<img width='auto' alt='데모영상' src="{![데모영상](https://github.com/reezekim/wanted-pre-onboarding-frontend/assets/103403660/126b5553-6641-491b-9688-026613ff76a6)}" />
 
 <br />
 
-## 3. 프로젝트 구조
+## 3. 배포 링크
+
+[배포링크] (https://reezekim.netlify.app)
+
+<br />
+
+## 4. 프로젝트 설치 및 실행 방법
+
+1. 프로젝트 패키지 설치
+```
+npm install
+```
+
+
+2. 프로젝트 실행 
+
+```
+npm start
+```
+
+<br />
+
+## 5. 프로젝트 구조
 
 ```
 📦src
@@ -56,20 +84,4 @@
  ┣ 📜App.js
  ┣ 📜index.css
  ┗ 📜index.js
-```
-
-<br />
-
-## 4. 프로젝트 설치 및 실행
-
-1. 프로젝트 패키지 설치
-```
-npm install
-```
-
-
-2. 프로젝트 실행
-
-```
-npm start
 ```
