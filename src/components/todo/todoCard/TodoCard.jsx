@@ -36,6 +36,7 @@ export default function TodoCard({ id, isCompleted, todo, getTodo }) {
       getTodo();
     }, 200);
   };
+
   const modifyContent = () => {
     setIsUpdata(false);
     setTodoValue(todo);
@@ -45,6 +46,12 @@ export default function TodoCard({ id, isCompleted, todo, getTodo }) {
   const deleteContent = () => {
     setIsUpdata(true);
     setCheck(before);
+  };
+
+  const activeEnter = (e) => {
+    if (e.key === "Enter") {
+      updateTodo();
+    }
   };
 
   return (
@@ -59,7 +66,7 @@ export default function TodoCard({ id, isCompleted, todo, getTodo }) {
             defaultChecked={isCompleted}
             className={styles.checkbox}
           />
-          <label htmlFor={id} className={styles.text}>
+          <label htmlFor={id} className={styles.textList}>
             {todo}
           </label>
           <button
@@ -87,10 +94,12 @@ export default function TodoCard({ id, isCompleted, todo, getTodo }) {
             defaultChecked={isCompleted}
             className={styles.checkbox}
           />
+          <label htmlFor={id} className={styles.textFix}></label>
           <input
             data-testid="modify-input"
             value={todoValue}
             onChange={handleChange}
+            onKeyDown={(e) => activeEnter(e)}
             className={styles.input}
           />
           <button
